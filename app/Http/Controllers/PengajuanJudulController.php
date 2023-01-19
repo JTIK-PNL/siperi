@@ -27,11 +27,21 @@ class PengajuanJudulController extends Controller
      */
     public function create()
     {
-        $mahasiswas = DB::table('mahasiswas')->select('id', 'nim', 'nama')->whereNotIn('id', function ($query) {
-            $query->select('mahasiswa_id')->from('pengajuan_juduls');
-        })->orderBy('nama')->get();
-        $dosen_pembimbing_1 = Dosen::orderBy('nama_lengkap', 'asc')->get();
-        $dosen_pembimbing_2 = Dosen::orderBy('nama_lengkap', 'asc')->get();
+        $mahasiswas = DB::table('mahasiswas')
+            ->select('id', 'nim', 'nama')
+            ->whereNotIn('id', function ($query) {
+                $query->select('mahasiswa_id')->from('pengajuan_juduls');
+            })->orderBy('nama')->get();
+        $dosen_pembimbing_1 = DB::table('dosens')
+            ->select('id', 'nama_lengkap')
+            ->whereNot('kouta_pembimbing_1', '<=', function ($query) {
+                $query->select(DB::raw('count(*)'))->from('pengajuan_juduls')->where('dosen_pembimbing_1', '=', DB::raw('dosens.id'));
+            })->orderBy('nama_lengkap')->get();
+        $dosen_pembimbing_2 = DB::table('dosens')
+            ->select('id', 'nama_lengkap')
+            ->whereNot('kouta_pembimbing_2', '<=', function ($query){
+                $query->select(DB::raw('count(*)'))->from('pengajuan_juduls')->where('dosen_pembimbing_2', '=', DB::raw('dosens.id'));
+            })->orderBy('nama_lengkap')->get();
         return view('pengajuan-judul.create', [
             'title' => 'Pengajuan Judul',
             'mahasiswas' => $mahasiswas,
