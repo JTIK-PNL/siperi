@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('referensi_2')->nullable();
             $table->string('judul_3')->nullable();
             $table->text('referensi_3')->nullable();
+            $table->string('judul_diterima')->nullable();
             $table->foreignId('mahasiswa_id')->constrained('mahasiswas')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('dosen_pembimbing_1')->constrained('dosens')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('dosen_pembimbing_2')->constrained('dosens')->onUpdate('cascade')->onDelete('cascade');
