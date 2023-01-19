@@ -16,8 +16,8 @@ class MahasiswaSeeder extends Seeder
     public function run()
     {
         DB::table('mahasiswas')->insert([
-            ['created_at' => date('Y-m-d H:i'), 'angkatan' => '2018', 'nim' => '1890343035', 'nama' => 'MIZWAR HADINATA'],
             ['created_at' => date('Y-m-d H:i'), 'angkatan' => '2018', 'nim' => '1890343070', 'nama' => 'CUT FATIA ZAMIRA'],
+            ['created_at' => date('Y-m-d H:i'), 'angkatan' => '2018', 'nim' => '1890343035', 'nama' => 'MIZWAR HADINATA'],
             ['created_at' => date('Y-m-d H:i'), 'angkatan' => '2019', 'nim' => '1990343001', 'nama' => 'ASRI NANDA'],
             ['created_at' => date('Y-m-d H:i'), 'angkatan' => '2019', 'nim' => '1990343002', 'nama' => 'DINDA AULIA THOSI SEGARA'],
             ['created_at' => date('Y-m-d H:i'), 'angkatan' => '2019', 'nim' => '1990343003', 'nama' => 'M. RIZKY SYAHPUTRA'],

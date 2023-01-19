@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('judul_3')->nullable();
             $table->text('referensi_3')->nullable();
             $table->foreignId('mahasiswa_id')->constrained('mahasiswas')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('dosen_id')->constrained('dosens')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('dosen_pembimbing_1')->constrained('dosens')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('dosen_pembimbing_2')->constrained('dosens')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status', ['diajukan', 'diterima', 'ditolak'])->default('diajukan');
             $table->string('catatan')->nullable();

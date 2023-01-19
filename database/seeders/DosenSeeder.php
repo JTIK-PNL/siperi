@@ -25,7 +25,7 @@ class DosenSeeder extends Seeder
             ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 8, 'kouta_pembimbing_2' => 2, 'jabatan_fungsional' => 'asisten ahli', 'nama_lengkap' => 'Indrawati, SST., MT'],
             ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 8, 'kouta_pembimbing_2' => 2, 'jabatan_fungsional' => 'lektor', 'nama_lengkap' => 'Muhammad Nasir, ST., MT'],
             ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 8, 'kouta_pembimbing_2' => 2, 'jabatan_fungsional' => 'lektor', 'nama_lengkap' => 'Mursyidah, MT'],
-            ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 0, 'kouta_pembimbing_2' => 5, 'jabatan_fungsional' => 'lektor kepala', 'nama_lengkap' => 'Dra. Jamilah, M.Pd.'],
+            ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 0, 'kouta_pembimbing_2' => 5, 'jabatan_fungsional' => 'lektor kepala', 'nama_lengkap' => 'Jamilah, Dra., M.Pd.'],
             ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 0, 'kouta_pembimbing_2' => 5, 'jabatan_fungsional' => 'asisten ahli', 'nama_lengkap' => 'Mahlil, S.Pd., M.A.'],
             ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 0, 'kouta_pembimbing_2' => 10, 'jabatan_fungsional' => 'asisten ahli', 'nama_lengkap' => 'Fachri Yanuar Rudi F, M.T.'],
             ['created_at' => date('Y-m-d H:i'), 'kouta_pembimbing_1' => 0, 'kouta_pembimbing_2' => 10, 'jabatan_fungsional' => 'asisten ahli', 'nama_lengkap' => 'Guntur Syahputra, S. Kom., M. Kom.'],
