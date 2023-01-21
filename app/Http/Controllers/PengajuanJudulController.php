@@ -83,7 +83,7 @@ class PengajuanJudulController extends Controller
         } else {
             PengajuanJudul::create($data);
             Alert::success('Berhasil', 'Data berhasil disimpan');
-            return redirect()->route('rekap-pengajuan-judul');
+            return redirect()->route('pengajuan-judul.rekap');
         }
     }
 
@@ -134,9 +134,36 @@ class PengajuanJudulController extends Controller
 
     public function rekap()
     {
+        if (request()->ajax()) {
+            $pengajuan_juduls = PengajuanJudul::orderBy('created_at', 'desc')->get();
+            return datatables()->of($pengajuan_juduls)
+                ->addIndexColumn()
+                ->addColumn('nim', function ($data) {
+                    return $data->mahasiswa->nim;
+                })
+                ->addColumn('nama', function ($data) {
+                    return $data->mahasiswa->nama;
+                })
+                ->addColumn('dosen_pembimbing_1st', function ($data) {
+                    return $data->dosen_pembimbing_1st->nama_lengkap;
+                })
+                ->addColumn('dosen_pembimbing_2nd', function ($data) {
+                    return $data->dosen_pembimbing_2nd->nama_lengkap;
+                })
+                ->editColumn('status', function ($data) {
+                    if ($data->status == 'diajukan') {
+                        return '<span class="uppercase badge badge-pill badge-warning">Diajukan</span>';
+                    } elseif ($data->status == 'diterima') {
+                        return '<span class="uppercase badge badge-pill badge-success">Diterima</span>';
+                    } elseif ($data->status == 'ditolak') {
+                        return '<span class="uppercase badge badge-pill badge-danger">Ditolak</span>';
+                    }
+                })
+                ->escapeColumns([true])
+                ->make(true);
+        }
         return view('pengajuan-judul.rekap', [
             'title' => 'Rekap Pengajuan Judul',
-            'pengajuan_juduls' => PengajuanJudul::orderBy('id', 'desc')->get(),
         ]);
     }
 }

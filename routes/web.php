@@ -24,9 +24,10 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/peganjuan-judul', [PengajuanJudulController::class, 'create'])->name('pengajuan-judul');
-    Route::get('/rekap-peganjuan-judul', [PengajuanJudulController::class, 'rekap'])->name('rekap-pengajuan-judul');
+    Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'edit'])->name('pengajuan-judul.edit');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'store'])->name('pengajuan-judul.store');
+    Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'create'])->name('pengajuan-judul.create');
+    Route::get('/pengajuan-judul-rekap', [PengajuanJudulController::class, 'rekap'])->name('pengajuan-judul.rekap');
 });
 
 /*Route::middleware('auth')->group(function () {

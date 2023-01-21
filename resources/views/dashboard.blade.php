@@ -9,6 +9,16 @@
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 text-center">
+                    <b>Waktu Pengajuan Judul Skripsi : 20 Januari 2023 s.d. 25 Januari 2023</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pb-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
 
                     Jumlah Mahasiswa : {{ $jumlah_mahasiswa }} Mahasiswa

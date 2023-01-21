@@ -13,7 +13,11 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ asset('img/logo.ico') }}" type="image/x-icon">
 
+        <!-- Styles -->
+        @stack('styles')
+
         <!-- Scripts -->
+        @stack('scripts')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
@@ -36,4 +40,5 @@
             </main>
         </div>
     </body>
+    @stack('page_script')
 </html>
